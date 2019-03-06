@@ -13,14 +13,31 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
+      <tr *ngFor = "let student of students">
+        <th scope="row">#</th>
+        <td>{{student.name}}</td>
+        <td>{{student.age}}</td>
+        <td>{{student.level}}</td>
+        <td>{{student.contact}}</td>
+        <td>
+          <a [routerLink]="[6]" class="text-success">
+            <i class="fa fa-eye" aria-hidden="true">view</i>
+          </a> /
+          <a [routerLink]="[5,'edit']" >
+              <i class="fa fa-pencil-square-o" aria-hidden="true">edit</i>
+          </a>/
+          <a href="" class="text-danger">
+              <i class="fa fa-trash" aria-hidden="true">delete</i>
+          </a>
+
+        </td>
+      <!--  <th scope="row">#</th>
         <td>Mark</td>
         <td>25</td>
         <td>2</td>
         <td>6547895621</td>
         <td>
-          <a href="" class="text-success">
+          <a [routerLink]="[1]" class="text-success">
             <i class="fa fa-eye" aria-hidden="true"></i> view
           </a> /
           <a [routerLink]="[2, 'edit']">
@@ -59,8 +76,8 @@
             <a href="" class="text-danger">
               <i class="fa fa-trash" aria-hidden="true"></i> delete
             </a>
-        </td>
-      </tr>
+        </td>-->
+      </tr> 
     </tbody>
   </table>
 </div>
